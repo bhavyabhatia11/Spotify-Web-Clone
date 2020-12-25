@@ -1,0 +1,69 @@
+.body{
+    padding: 30px;
+    
+    flex: 0.88;
+    height: 100vh;
+    color:white;
+    background: linear-gradient( rgb(91,87,115), rgb(0,0,0,1));
+    overflow-y: scroll;  
+    overflow-x: scroll;  
+    transition: 200ms color ease-in;
+}
+.body::-webkit-scrollbar {
+
+    width: 10px;
+  }
+  
+  /* Track */
+.body::-webkit-scrollbar-track {
+    background: linear-gradient( rgb(91,87,115), rgb(0,0,0,1));
+  }
+  
+  /* Handle */
+.body::-webkit-scrollbar-thumb {
+    background: grey;
+  }
+  
+  /* Handle on hover */
+.body::-webkit-scrollbar-thumb:hover {
+    background: white;
+    
+  }
+.bodyInfo{
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+.bodyInfo>img{
+    height: 20vw;
+    margin:0 20px;
+    box-shadow: 0 4px 60px rgb(0,0,0,0.5);
+
+}
+.infoText >p{
+    font-size: 14px;
+
+}
+
+.bodyIcons{
+    display: flex;
+    align-items: center;
+}
+.bodyIcons > .MuiSvgIcon-root{
+   margin-right: 20px;
+}
+.bodyShuffle {
+    font-size: 80px !important;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bodyShuffle:hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+  }
+
+  .bodySongs{
+      margin: 10px -30px;
+  }
