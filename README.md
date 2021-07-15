@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Disclaimer 
+The Aim of this project is to learn the basics of React and Creating dynamic web applications using context Api and Redux. It also encorporates use of Spotify API for user authentication and fetching user data. Currently Spotify API does not allow to play or control songs for Non-Premium Users. hence a lot of functionaliity will be missing if you sign up using a free spotify account, This is still the version 1 of the app there are still many things that could be improved.
 
 ## Available Scripts
 
