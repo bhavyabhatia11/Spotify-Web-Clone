@@ -2,6 +2,8 @@ import React from "react";
 import "../Styles/Login.css";
 import {loginUrl} from "../Utilities/spotify";
 function Login() {
+
+    console.log(loginUrl);
     return (
         <div className="login">
         
