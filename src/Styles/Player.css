@@ -1,3 +1,4 @@
 .player_body{
     display: flex;
+    overflow: hidden;
 }

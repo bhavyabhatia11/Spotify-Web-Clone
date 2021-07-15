@@ -1,6 +1,6 @@
 import React from "react";
-import "./Body.css";
-import { useDataLayerValue } from "./DataLayer";
+import "../Styles/Body.css";
+import { useDataLayerValue } from "../Utilities/DataLayer";
 import Header from "./Header";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -11,9 +11,9 @@ import SongRow from "./SongRow"
 function Body({spotify}){
     const [{discover_weekly} , dispatch] = useDataLayerValue();
     
-    console.log("ejfeif", discover_weekly?.id);
+    ///console.log("ejfeif", discover_weekly?.id);
   
-    const playPlaylist = () => {
+    const playPlaylist = (id) => {
         spotify
           .play({
             context_uri: `spotify:playlist:${discover_weekly?.id}`,
@@ -53,7 +53,7 @@ function Body({spotify}){
         <div className= "body">
             <Header  spotify = {spotify} />
             <div className="bodyInfo">
-                <img src= {discover_weekly?.images[0].url} alt ="" />
+                <img src= {discover_weekly?.images[0]?.url} alt ="" />
                 <div className ="infoText">
                     <strong>PLAYLIST</strong>
                     <h1> {discover_weekly?.name} </h1>

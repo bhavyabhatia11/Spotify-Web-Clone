@@ -2,9 +2,9 @@ import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
-import {DataLayer} from "./DataLayer";
-import reducer, {initialState } from './reducer';
+import * as serviceWorker from './Utilities/serviceWorker';
+import {DataLayer} from "./Utilities/DataLayer";
+import reducer, {initialState } from './Utilities/reducer';
 
 ReactDOM.render(
   <React.StrictMode>

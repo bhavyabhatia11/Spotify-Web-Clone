@@ -1,8 +1,8 @@
 import React from "react";
-import "./Header.css";
+import "../Styles/Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import { Avatar } from "@material-ui/core";
-import {useDataLayerValue } from "./DataLayer"
+import {useDataLayerValue } from "../Utilities/DataLayer"
 import { useEffect } from "react";
 
 function Header({spotify}){

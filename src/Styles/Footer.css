@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     bottom: 0;
-    height: 65px;
-    width: 99%;
+    height: 5vh;
+    width: 100vw;
     background-color: #282828;
     padding: 20px;
 }

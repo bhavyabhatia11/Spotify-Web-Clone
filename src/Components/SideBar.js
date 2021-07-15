@@ -1,17 +1,29 @@
 import React from "react";
-import "./SideBar.css";
+import "../Styles/SideBar.css";
 import SideBarOptions from "./SideBarOptions";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic"
-import { useDataLayerValue } from "./DataLayer";
+import { useDataLayerValue } from "../Utilities/DataLayer";
 
 
 function SideBar({spotify}){
     const [{playlists}, dispatch] = useDataLayerValue();
     
     
-    console.log("nooo ", playlists);
+    //console.log("nooo ", playlists);
+
+    const handlePlaylist = (id) => {
+      console.log("Working",spotify);
+      spotify.getPlaylist(id).then((response) =>
+      dispatch({
+        type: "SET_DISCOVER_WEEKLY",
+        discover_weekly: response,
+      })
+      );
+
+    };
+   
     return(
         <div className="sidebar">
            <img
@@ -30,8 +42,8 @@ function SideBar({spotify}){
 
   
         {playlists?.items?.map((playlist) => (
-          console.log("dumdum", playlist),
-        <SideBarOptions title={playlist.name} />
+         
+          <SideBarOptions title={playlist.name} id ={playlist.id} handlePlaylist ={handlePlaylist}/>
       ))}
 
         

@@ -1,10 +1,10 @@
 import React, { useEffect} from 'react';
 import './App.css';
-import Login from './Login';
-import { getTokenFromUrl } from './spotify';
+import Login from './Components/Login';
+import { getTokenFromUrl } from './Utilities/spotify';
 import SpotifyWebApi from "spotify-web-api-js";
-import Player from './Player';
-import {useDataLayerValue} from "./DataLayer";
+import Player from './Components/Player';
+import {useDataLayerValue} from "./Utilities/DataLayer";
 
 const spotify = new SpotifyWebApi();
 
@@ -47,9 +47,9 @@ function App() {
         type: "SET_DISCOVER_WEEKLY",
         discover_weekly: response,
       })
-       );
+      );
       spotify.getUserPlaylists().then((playlists)=>{
-        console.log(playlists)
+        
         dispatch({
           type: 'SET_PLAYLISTS',
           playlists: playlists,
@@ -60,19 +60,14 @@ function App() {
 
   },[token,dispatch]);
 
-  console.log("user",user);
-  console.log("token",token);
+  //console.log("user",user);
+  //console.log("token",token);
   return (
-    <div className="app">
-     {
-       token? (
-         <Player spotify={spotify}  />
-       ) : (
-        <Login/>
-       )
-     }
     
-
+    <div className="app">
+     
+       {!token && <Login />}
+       {token && <Player spotify={spotify} />}
     </div>
   );
 }

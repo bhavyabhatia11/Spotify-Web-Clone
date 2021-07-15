@@ -1,12 +1,10 @@
 .body{
     padding: 30px;
-    
     flex: 0.88;
-    height: 100vh;
+    height: 95vh;
     color:white;
     background: linear-gradient( rgb(91,87,115), rgb(0,0,0,1));
     overflow-y: scroll;  
-    overflow-x: scroll;  
     transition: 200ms color ease-in;
 }
 .body::-webkit-scrollbar {

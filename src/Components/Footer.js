@@ -1,5 +1,5 @@
 import React,{ useEffect, useState }  from "react";
-import "./Footer.css";
+import "../Styles/Footer.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
@@ -9,14 +9,14 @@ import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay"; 
 import { Grid, Slider } from "@material-ui/core";
-import { useDataLayerValue } from "./DataLayer";
+import { useDataLayerValue } from "../Utilities/DataLayer";
 
 function Footer({spotify}){
     const [{ token, item, playing }, dispatch] = useDataLayerValue();
 
     useEffect(() => {
         spotify.getMyCurrentPlaybackState().then((r) => {
-          console.log(r);
+          //console.log(r);
     
           dispatch({
             type: "SET_PLAYING",
@@ -28,7 +28,9 @@ function Footer({spotify}){
             item: r.item,
           });
         });
-      }, [spotify]);
+
+        
+      },[item]);
     
       const handlePlayPause = () => {
         spotify.getMyCurrentPlayingTrack().then((r) => {
